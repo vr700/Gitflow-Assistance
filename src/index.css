@@ -1,0 +1,72 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  .command-block {
+    @apply font-mono bg-muted/50 p-4 rounded-md relative mb-2;
+  }
+  
+  .command-block.copied {
+    @apply bg-green-100/5 border-green-500/50;
+  }
+  
+  .command-copy-button {
+    @apply absolute right-2 top-2 p-1 rounded-md hover:bg-accent/50 transition-colors;
+  }
+
+  .flow-node {
+    @apply relative flex flex-col items-center;
+  }
+  
+  .flow-node-icon {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-white transition-colors duration-300;
+  }
+  
+  .flow-node-line {
+    @apply w-1 h-8 bg-border transition-colors duration-300;
+  }
+  
+  .flow-node-label {
+    @apply text-xs text-center mt-2 text-muted-foreground;
+  }
+  
+  .flow-node-pending .flow-node-icon {
+    @apply bg-muted;
+  }
+  
+  .flow-node-active .flow-node-icon {
+    @apply bg-blue-500;
+  }
+  
+  .flow-node-completed .flow-node-icon {
+    @apply bg-green-500;
+  }
+}
